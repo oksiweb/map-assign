@@ -1,5 +1,7 @@
 export default (map, ...sources) => {
   for (let source of sources) {
+    if (source == null) continue
+
     let entries = typeof source.entries == "function"
       ? source.entries()
       : Object.entries(source)
